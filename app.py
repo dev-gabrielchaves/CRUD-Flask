@@ -60,6 +60,17 @@ def add():
         # And finally redirect the user to the main page.
         return redirect('/')
 
+# Creating our delete route that will get the id of the user and delete it.
+@app.route('/delete/<int:id>')
+def delete(id):
+    # Getting our user from the database.
+    person = Person.query.get(id)
+    # Deleting it.
+    db.session.delete(person)
+    # Commiting the changes.
+    db.session.commit()
+    # Redirecting to main page.
+    return redirect('/')
 
 if __name__ == '__main__':
     # I don't know why, but it is necessary to create that 'context', otherwise it won't work.  

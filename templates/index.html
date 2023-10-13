@@ -27,6 +27,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Age</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <!-- Defining the body of the table -->
@@ -38,6 +39,8 @@
                 <td>{{person.first_name}}</td>
                 <td>{{person.last_name}}</td>
                 <td>{{person.age}}</td>
+                <!-- Link's to the edit and delete routes -->
+                <td><a href="/edit">Edit</a> | <a href="/delete/{{person.id}}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>

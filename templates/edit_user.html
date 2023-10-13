@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Person</title>
+    <!-- Calling our Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
     <h1 style="text-align: center;">Edit User {{person.first_name}}</h1>
     <!-- Creating our form that will get the data and send it to our route '/edit' with a 'POST ' request -->
     <form action="/edit/{{person.id}}" method="post">
         <!-- First Name field -->
-        <div>
-            <p>First Name:
-            <input type="text" name="first_name" id="first_name" value="{{person.first_name}}">
-            </p>
+        <div class="mb-3"> <!-- Adding Bootstrap classes to our div to get have some style -->
+            <label class="form-label">First Name</label> 
+            <input type="text" name="first_name" id="first_name" class="form-control" value="{{person.first_name}}">
         </div>
         <!-- Last Name field -->
-        <div>
-            <p>Last Name:
-            <input type="text" name="last_name" id="last_name" value="{{person.last_name}}">
-            </p>
+        <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input type="text" name="last_name" id="last_name" class="form-control" value="{{person.last_name}}">
         </div>
         <!-- Age field -->
-        <div>
-            <p>Age:
-            <input type="number" name="age" id="age" value="{{person.age}}">
-            </p>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input type="number" name="age" id="age" class="form-control" value="{{person.age}}">
         </div>
         <!-- Submit button -->
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn btn-secondary">Submit</button>
         </div>
     </form>
 </body>

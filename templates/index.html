@@ -4,23 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <!-- Adding borders to the table -->
-    <style>
-        table,
-        th,
-        td {
-          padding: 10px;
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-      </style>
+    <!-- Calling our Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
     <h1 style="text-align: center;">CRUD Application</h1>
-    <!-- Adding link that will send the user to the route '/add' that it's in our app.py -->
-    <a href="/add">Add User</a>
+    <br/>
     <!--  Creating our table that will contain the data of the people -->
-    <table>
+    <!-- That class 'table' will give style to our table -->
+    <table class="table">
         <!-- Defining the head of the table -->
         <thead>
             <tr>
@@ -45,5 +37,7 @@
             {% endfor %}
         </tbody>
     </table>
+    <!-- Adding link that will send the user to the route '/add' that it's in our app.py -->
+    <a href="/add"><button type="button" class="btn btn-secondary">Add User</button></a>
 </body>
 </html>

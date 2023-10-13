@@ -72,6 +72,24 @@ def delete(id):
     # Redirecting to main page.
     return redirect('/')
 
+# The edit will basically get the id of the person that will be edited.
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
+    # Getting the person by the id.
+    person = Person.query.get(id)
+    if request.method == 'GET':
+        # If the request method is 'GET' then render the page and pass the person to the 'person'.
+        return render_template('edit_user.html', person= person)
+    elif request.method == 'POST':
+        # Changing the person information with the information that we got with the form.
+        person.first_name = request.form['first_name']
+        person.last_name = request.form['last_name']
+        person.age = request.form['age']
+        # Committing the changes and redirecting to the main page.
+        db.session.commit()
+        return redirect('/')
+    
+
 if __name__ == '__main__':
     # I don't know why, but it is necessary to create that 'context', otherwise it won't work.  
     with app.app_context():

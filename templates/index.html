@@ -40,7 +40,7 @@
                 <td>{{person.last_name}}</td>
                 <td>{{person.age}}</td>
                 <!-- Link's to the edit and delete routes -->
-                <td><a href="/edit">Edit</a> | <a href="/delete/{{person.id}}">Delete</a></td>
+                <td><a href="/edit/{{person.id}}">Edit</a> | <a href="/delete/{{person.id}}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>

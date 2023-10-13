@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Adding borders to the table -->
+    <style>
+        table,
+        th,
+        td {
+          padding: 10px;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+      </style>
+</head>
+<body>
+    <h1 style="text-align: center;">CRUD Application</h1>
+    <!-- Adding link that will send the user to the route '/add' that it's in our app.py -->
+    <a href="/add">Add User</a>
+    <!--  Creating our table that will contain the data of the people -->
+    <table>
+        <!-- Defining the head of the table -->
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <!-- Defining the body of the table -->
+        <tbody>
+            <!-- Using loop to get every person from people -->
+            {% for person in people %}
+            <tr>
+                <!-- Showing their info -->
+                <td>{{person.first_name}}</td>
+                <td>{{person.last_name}}</td>
+                <td>{{person.age}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

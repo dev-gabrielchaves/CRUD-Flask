@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Add User</h1>
+    <!-- Creating our form that will get the data and send it to our route '/add' with a 'POST ' request -->
+    <form action="/add" method="post">
+        <!-- First Name field -->
+        <div>
+            <p>First Name:
+            <input type="text" name="first_name" id="first_name">
+            </p>
+        </div>
+        <!-- Last Name field -->
+        <div>
+            <p>Last Name:
+            <input type="text" name="last_name" id="last_name">
+            </p>
+        </div>
+        <!-- Age field -->
+        <div>
+            <p>Age:
+            <input type="number" name="age" id="age">
+            </p>
+        </div>
+        <!-- Submit button -->
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -6,12 +6,12 @@ A CRUD(Create, Read, Update and Delete) application in Flask.
 
 ### Home page
 
-<img src="/imgs/home.png">
+<img src="/imgs/home.PNG">
 
 ### Add page
 
-<img src="/imgs/add_user.png">
+<img src="/imgs/add_user.PNG">
 
 ### Edit page
 
-<img src="/imgs/edit_user.png">
+<img src="/imgs/edit_user.PNG">

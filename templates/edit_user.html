@@ -1,35 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Person</title>
-    <!-- Calling our Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
-    <h1 style="text-align: center;">Edit User {{person.first_name}}</h1>
-    <!-- Creating our form that will get the data and send it to our route '/edit' with a 'POST ' request -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
     <form action="/edit/{{person.id}}" method="post">
-        <!-- First Name field -->
-        <div class="mb-3"> <!-- Adding Bootstrap classes to our div to get have some style -->
-            <label class="form-label">First Name</label> 
-            <input type="text" name="first_name" id="first_name" class="form-control" value="{{person.first_name}}">
-        </div>
-        <!-- Last Name field -->
-        <div class="mb-3">
-            <label class="form-label">Last Name</label>
-            <input type="text" name="last_name" id="last_name" class="form-control" value="{{person.last_name}}">
-        </div>
-        <!-- Age field -->
-        <div class="mb-3">
-            <label class="form-label">Age</label>
-            <input type="number" name="age" id="age" class="form-control" value="{{person.age}}">
-        </div>
-        <!-- Submit button -->
-        <div>
-            <button type="submit" class="btn btn-secondary">Submit</button>
-        </div>
+        <h1>Edit User: {{person.first_name}}</h1>
+        <hr>
+            <input type="text" name="first_name" placeholder="First Name..." class="form-control" value="{{person.first_name}}">
+            <input type="text" name="last_name" placeholder="Last Name..." class="form-control" value="{{person.last_name}}">
+            <input type="number" name="age" placeholder="Age..." class="form-control" value="{{person.age}}">
+        <button class="btn" type="submit">Submit</button>
     </form>
-</body>
-</html>
+</div>
+{% endblock content %}

@@ -36,7 +36,7 @@ def index():
     # Get all the data from our table and pass it to our variable people.
     people = Person.query.all()
     # Returning our 'index.html' page that is in templates with the variable people that will allow us to use it in our html page as 'people'.
-    return render_template('index.html', people= people)
+    return render_template('index.html', people= people, title='Home')
 
 # Creating route to the add user page '/add'.
 # That route will allow to request methods: 'GET' and 'POST'.
@@ -44,7 +44,7 @@ def index():
 def add():
     # If the request is of the type 'GET', then render the page 'add_user.html'.
     if request.method == 'GET':
-        return render_template('add_user.html')
+        return render_template('add_user.html', title='Add User')
     # Using 'elif' just to illustrate, but if the request is type 'POST' do the following:
     elif request.method == 'POST':
         # From our form that it is in the page 'add_user.html' get the first, last name and age;
@@ -79,7 +79,7 @@ def edit(id):
     person = Person.query.get(id)
     if request.method == 'GET':
         # If the request method is 'GET' then render the page and pass the person to the 'person'.
-        return render_template('edit_user.html', person= person)
+        return render_template('edit_user.html', person= person, title='Edit User')
     elif request.method == 'POST':
         # Changing the person information with the information that we got with the form.
         person.first_name = request.form['first_name']
